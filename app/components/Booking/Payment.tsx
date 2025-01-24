@@ -41,7 +41,9 @@ const Payment = () => {
         destination,
         paymentMethod,
       };
-      sessionStorage.setItem("orderData", JSON.stringify(orderData));
+      if (typeof window !== 'undefined') {
+        window.sessionStorage.setItem("orderData", JSON.stringify(orderData));
+      }
     } else {
       console.log({ paymentMethod, selectedCar, price, source, destination });
       alert("Please fill in all the required fields.");

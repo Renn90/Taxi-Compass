@@ -17,7 +17,8 @@ const Page = () => {
   const [stripePromise, setStripePromise] = useState<any>(null);
   const [options, setOptions] = useState<StripeElementsOptions | null>(null);
 
-  const orderData = sessionStorage.getItem("orderData");
+  const orderData =
+    typeof window !== 'undefined' && sessionStorage.getItem("orderData");
   const { selectedCar, price, source, destination, paymentMethod } = orderData
     ? JSON.parse(orderData)
     : {};

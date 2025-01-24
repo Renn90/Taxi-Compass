@@ -7,7 +7,7 @@ const page = () => {
   const directionDataCtx = useContext(DirectionDataContext);
   const directionData = directionDataCtx ? directionDataCtx.directionData : "";
 
-  const orderData = sessionStorage.getItem("orderData");
+  const orderData = typeof window !== "undefined" && sessionStorage.getItem("orderData");
   const { selectedCar, price, source, destination, paymentMethod } = orderData
     ? JSON.parse(orderData)
     : {};
@@ -21,8 +21,11 @@ const page = () => {
   const router = useRouter();
 
   const returnHome = () => {
-    sessionStorage.removeItem("orderData");
+    if (typeof window !== "undefined"){
+    window.sessionStorage.removeItem("orderData");
+  }
     router.push("/");
+
   };
 
   return (

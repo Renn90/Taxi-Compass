@@ -19,10 +19,12 @@ export default function Home() {
     getUserLocation();
   }, []);
 
-    useEffect(() => {
-      // Clear orderData when the component mounts
-      sessionStorage.removeItem("orderData");
-    }, []);
+  useEffect(() => {
+    // Clear orderData when the component mounts
+    if (typeof window !== "undefined") {
+      window.sessionStorage.removeItem("orderData");
+    }
+  }, []);
 
   const getUserLocation = () => {
     navigator.geolocation.getCurrentPosition(function (pos) {
@@ -32,7 +34,6 @@ export default function Home() {
       });
     });
   };
-
 
   return (
     <div>
