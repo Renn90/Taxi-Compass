@@ -5,7 +5,7 @@ import Cars from "./Cars";
 import Payment from "./Payment";
 
 export const MainBooking = () => {
-  const height =  typeof window !== "undefined" ? window.innerHeight * 0.87 : '100vh';
+  const height =  typeof window !== "undefined" ? window.innerHeight * 0.87 : '90vh';
 
   return (
     <div

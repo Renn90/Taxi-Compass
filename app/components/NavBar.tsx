@@ -17,11 +17,11 @@ const NavBar = () => {
             Compass
           </h1>
         </li>
-        <span className="items-center space-x-4 hidden md:flex">
+        {/* <span className="items-center space-x-4 hidden md:flex">
           <li className="hover:opacity-85 cursor-pointer">Home</li>
           <li className="hover:opacity-85 cursor-pointer">History</li>
           <li className="hover:opacity-85 cursor-pointer">Help</li>
-        </span>
+        </span> */}
       </ul>
       <UserButton />
     </div>
