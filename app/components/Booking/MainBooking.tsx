@@ -5,11 +5,7 @@ import Cars from "./Cars";
 import Payment from "./Payment";
 
 export const MainBooking = () => {
-  const height = window.innerHeight * 0.87;
-
-  const [cars, setCars] = useState("");
-  const [price, setPrice] = useState("");
-
+  const height =  typeof window !== "undefined" ? window.innerHeight * 0.87 : '100vh';
 
   return (
     <div

@@ -73,8 +73,8 @@ function MapboxMap() {
     setDirectionData(result);
   };
 
-  const height = window.innerHeight * 0.87;
-
+  const height =  typeof window !== "undefined" ? window.innerHeight * 0.87 : '100vh';
+  
   return (
     <div className="p-4" style={{height: height}}>
       <h2 className="text-[20px] font-semibold">Map</h2>
